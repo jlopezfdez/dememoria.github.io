@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dememoria</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+
+    .row.content {
+      height: 450px
+    }
+
+    /* Set gray background color and 100% height */
+
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {
+        height: auto;
+      }
+    }
+  </style>
+  <link href="css/varios.css" rel="stylesheet">
+  <link href="css/tipos_juegos.css" rel="stylesheet">
+  <link href="css/menu_juegos.css" rel="stylesheet">
+  <link href="css/menu_opciones.css" rel="stylesheet">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Memoramas</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#">Inicio</a>
+          </li>
+          <li>
+            <a href="#">Acerca de</a>
+          </li>
+          <li>
+            <a href="#">Proyectos</a>
+          </li>
+          <li>
+            <a href="#">Contacto</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-log-in"></span> Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</head>
+
+<body>
+
+  <img />
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2" style='border-right: 2px solid gray; width: 180px;'>
+
+        <div id='cssmenu_opciones' style='margin-top: 5px;'>
+          <ul style="border: 2px solid">
+            <li>
+
+              <span>JUEGOS</span>
+
+            </li>
+          </ul>
+        </div>
+
+        <div id='cssmenu' style='margin-top: 5px;'>
+          <ul id='listadejuegos'>
+          </ul>
+        </div>
+
+        <div id='cssmenu_opciones' style='margin-top: 5px;'>
+          <ul style="border: 2px solid">
+            <li>
+
+              <span>OPCIONES</span>
+
+            </li>
+          </ul>
+        </div>
+
+        <div id='cssmenu' style='margin-top: 5px;'>
+          <ul>
+            <li>
+              <a href="#">
+                <span id="op_sonido">Desactivar sonido</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span id="reinicio">Iniciar sin tiempo</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span id="inicio">Iniciar con tiempo</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div id='cssmenu_opciones' style='margin-top: 5px;'>
+          <ul style="border: 2px solid">
+            <li>
+
+              <span>PUNTUACIONES</span>
+
+            </li>
+          </ul>
+        </div>
+
+        <div id='cssmenu_opciones' style='margin-top: 5px;'>
+          <ul>
+            <li>
+              <a href="#">
+                <span class="digitos" id="Minutos">00</span>
+                <span class="digitos" id="Segundos">:00</span>
+                <span class="digitos" id="Centesimas">:00</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Intentos:</span>
+                <span class='intentos' style='margin: 5px;'> 0</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Record intentos:</span>
+                <span class='mejor' style='margin: 5px;'> 0</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Record tiempo:</span>
+                <span class='mejor_tiempo' style='margin: 5px;'>00:00:00</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div id="divTabla" class="col-sm-8 text-left">
+      </div>
+      <!-- <div class="col-sm-2 sidenav">
+        <div class="well">
+          <p>ADS</p>
+        </div>
+        <div class="well">
+          <p>ADS</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+
+  <footer class="container-fluid text-center">
+    <p>@Copyright 2018 - JLF</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="src/tipos_datos.js"></script>
+  <script src="src/temporizador.js"></script>
+  <script src="src/principal.js"></script>
+</body>
+
+</html>

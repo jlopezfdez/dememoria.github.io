@@ -1,0 +1,28 @@
+#cronometro {
+    display: inline-flex;
+}
+
+.digitos {
+    width: 25px;
+    height: 15px;
+    color: red;
+}
+
+.boton-reloj{
+    height: 28px; 
+    margin: 5px 0px 5px 0px;
+}
+
+.fin_partida {
+    transform: rotate(3deg);
+    transition: all 1s ease;
+}
+
+
+
+
+
+
+
+
+
