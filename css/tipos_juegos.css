@@ -21,6 +21,11 @@ td {
     border-color: blue;
 }
 
+.playing {
+    transform: scale(1.07);
+    transition: all .25s ease;
+}
+
 /* CSS CLASE GENERAL */
 table.clase_general {
     background-image: url(../src/images/fondos_tablas/fondo_madera.jpg);
@@ -30,13 +35,9 @@ table.clase_general {
 td.clase_general_celdas {
     border: 5px solid #ad840b;
     background-color: rgba(214,190,160,0.85);
-    transform: scale(1);
-    transition: all .07s ease-out;
 }
 
 td.clase_general_celdas.celda_activa {
-    transform: scale(1.08);
-    transition: all .07s ease;
     border-color: #d4ac39;
     box-shadow: 0 0 1rem #d4ac39;
     background-color: #f5ebda;
@@ -59,13 +60,9 @@ table.colores {
 td.colores_celdas {
     border: 5px solid #5c069c;
     background-color: rgba(233,229,245,0.45);
-    transform: scale(1);
-    transition: all .07s ease-out;
 }
 
 td.colores_celdas.celda_activa {
-    transform: scale(1.08);
-    transition: all .07s ease;
     border-color: #9240c5;
     box-shadow: 0 0 1rem #9240c5;
     background-color: #f5ebda;
@@ -88,13 +85,9 @@ table.alfabeto {
 td.alfabeto_celdas {
     border: 5px solid #6e9e76;
     background-color: rgba(41,89,148,0.85);
-    transform: scale(1);
-    transition: all .07s ease-out;
 }
 
 td.alfabeto_celdas.celda_activa {
-    transform: scale(1.08);
-    transition: all .07s ease;
     border-color: #3970d4;
     box-shadow: 0 0 1rem #0c37d6;
     background-color: #e5f5fb;
@@ -118,13 +111,9 @@ table.fotos_silvia {
 td.fotos_silvia_celdas {
     border: 5px solid #ad840b;
     background-color: rgba(214,190,160,0.85);
-    transform: scale(1);
-    transition: all .07s ease-out;
 }
 
 td.fotos_silvia_celdas.celda_activa {
-    transform: scale(1.08);
-    transition: all .07s ease;
     border-color: #d4ac39;
     box-shadow: 0 0 1rem #d4ac39;
     background-color: #f5ebda;
@@ -147,13 +136,9 @@ table.la_liga {
 td.la_liga_celdas {
     border: 5px solid #047184;;
     background-color: rgba(174,204,181,0.85);
-    transform: scale(1);
-    transition: all .07s ease-out;
 }
 
 td.la_liga_celdas.celda_activa {
-    transform: scale(1.08);
-    transition: all .07s ease;
     border-color: #19d444;
     box-shadow: 0 0 1rem #ebf5ed;
     background-color: #f9fdf4;

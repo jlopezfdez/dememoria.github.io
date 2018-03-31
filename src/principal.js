@@ -114,6 +114,7 @@ $(function () {
         return arrayAux;
     }
 
+
     /*
     Cada pulsación sobre una celda dispara la funcion controlClick
     Tras dos clicks se hace una comparación
@@ -123,24 +124,32 @@ $(function () {
     Si durante la pausa se pulsa otra celda, el timeout se detiene, el callback no se ejecuta,
     y se limpia el contenido para proceder con una nueva celda normalmente, sin que el usuario
     tenga porque esperar el timeout completo para poder pulsar otra celda
-     */
+    */
     function controlClick() {
         let tipo1 = tipo2 = '';
 
         /* g_enPausaVista estará a 1 mientras se visualiza la pareja no acertada
-            y permite que el usuario pulse otra casilla para no tener que esperar el timeout completo
+        y permite que el usuario pulse otra casilla para no tener que esperar el timeout completo
         */
         if (g_enPausaVista) {
             $('.sinpareja')
                 .text('')
-                .removeClass('celda_activa')
                 .css('background-color', '')
+                .removeClass('celda_activa')
             g_enPausaVista = 0;
             clearTimeout(timer);
         }
 
         if ($(this).hasClass('celda_activa') === false) {
-            $(this).addClass('celda_activa');
+            // Añadimos la clase activa y la de playing para la 
+            // animación de escalado de celda pulsada
+            $(this).addClass('celda_activa playing');
+
+            // Cuando termine la animacion de escalado, 
+            // quitamos la clase playing para que vuelva a su tamaño
+            // y notemos la pulsación, sobre todo cuando se pulsa la misma celda
+            // activa pero no acertada porque se quiere ir deprisa
+            $(this).on('transitionend', eliminarTransicion);
 
             g_totalClicks++;
 
@@ -243,6 +252,12 @@ $(function () {
                 $('.intentos').text(g_intentosPartida);
             }
         }
+    }
+
+
+    function eliminarTransicion(e) {
+        if (e.originalEvent.propertyName !== 'transform') return;
+        $(this).removeClass('playing');
     }
 
 
