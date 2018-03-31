@@ -47,10 +47,11 @@ td.clase_general_celdas.emparejada {
     transform: scale(1);
     transition: all .07s ease-out;
     box-shadow: 0 0 1rem yellow;
+    border-style: double;    
     background-color: #f9fdf4;
 }
-/* CSS CLASE COLORES */
 
+/* CSS CLASE COLORES */
 table.colores {
     background-image: url(../src/images/fondos_tablas/fondo_colores.jpg);
     box-shadow: 0 0 2rem #9240c5;
@@ -73,6 +74,7 @@ td.colores_celdas.emparejada {
     transition: all .07s ease-out;
     box-shadow: 0 0 1rem #5c069c;
     border-color: #9240c8;
+    border-style: double;
     background-color: #f9fdf4;
 }
 
@@ -97,10 +99,10 @@ td.alfabeto_celdas.emparejada {
     transform: scale(1);
     transition: all .07s ease-out;
     box-shadow: 0 0 1rem #0c37d6;
+    border-style: double;    
     background-color: #e5f5fb;
     border-color: #649bef;
 }
-
 
 /* CSS FOTOS SILVIA */
 table.fotos_silvia {
@@ -123,9 +125,9 @@ td.fotos_silvia_celdas.emparejada {
     transform: scale(1);
     transition: all .07s ease-out;
     box-shadow: 0 0 1rem yellow;
+    border-style: double;    
     border-color: #e0bd56;
 }
-
 
 /* CSS LA LIGA*/
 table.la_liga {
@@ -149,5 +151,6 @@ td.la_liga_celdas.emparejada {
     transition: all .07s ease-out;
     border-color: #19d444;
     box-shadow: 0 0 1rem #ebf5ed;
+    border-style: double;    
     background-color: #f9fdf4;
 }
