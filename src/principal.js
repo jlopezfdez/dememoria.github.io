@@ -258,7 +258,7 @@ $(function () {
         $(this).removeClass('playing');
     }
 
-    
+
     function comenzarJuego(params) {
         let tablaActiva = '', tablaSeleccionada = '', tipoJuegoActivo = '', cssJuegoActivo = '';
         g_contenido1 = g_contenido2 = g_comparacion1 = g_comparacion2 = '';
@@ -334,7 +334,6 @@ $(function () {
                                     ${element2}</span>
                                     </a>
                                     </li>`);
-
             });
         });
 
