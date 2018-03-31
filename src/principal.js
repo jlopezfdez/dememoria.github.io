@@ -125,7 +125,7 @@ $(function () {
     tenga porque esperar el timeout completo para poder pulsar otra celda
      */
     function controlClick() {
-        let tipo1 = '', tipo2 = '';
+        let tipo1 = tipo2 = '';
 
         /* g_enPausaVista estará a 1 mientras se visualiza la pareja no acertada
             y permite que el usuario pulse otra casilla para no tener que esperar el timeout completo
