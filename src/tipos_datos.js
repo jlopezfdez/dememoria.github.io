@@ -92,7 +92,7 @@ let tipos = {
             "clase": "alfabeto",
             "indice": "0",
             "formatos_disponibles": ["8 parejas", "10 parejas", "20 parejas"],
-            "imagenes": "0",
+            "imagenes": false,
             "fondo": "fondo_matrix.jpg",
             "valor": [
                 { "val": "A", "orden": "1", "tipo": "texto" }, { "val": "a", "orden": "1", "tipo": "texto" },
@@ -122,7 +122,7 @@ let tipos = {
             "clase": "colores",
             "indice": "1",
             "formatos_disponibles": ["8 parejas", "10 parejas"],
-            "imagenes": "0",
+            "imagenes": false,
             "fondo": "fondo_colores.jpg",
             "valor": [
                 { "val": "pink", "orden": "1", "tipo": "color" }, { "val": "pink", "orden": "1", "tipo": "color" },
@@ -143,7 +143,7 @@ let tipos = {
             
             "indice": "3",
             "formatos_disponibles": ["8 parejas", "10 parejas"],
-            "imagenes": "0",
+            "imagenes": false,
             "fondo": "fondo_madera.jpg",
             "valor": [
                 { "val": "pink", "orden": "1", "tipo": "color" }, { "val": "pink", "orden": "1", "color_texto": "red", "tipo": "texto_color" },
@@ -163,7 +163,7 @@ let tipos = {
             "clase": "la_liga",
             "indice": "2",
             "formatos_disponibles": ["10 parejas", "14 parejas", "20 parejas"],
-            "imagenes": "1",
+            "imagenes": true,
             "fondo": "fondo_cesped.jpg",
             "valor": [
                 { "val": "alaves.gif", "orden": "1", "tipo": "imagen" }, { "val": "alaves.gif", "orden": "1", "tipo": "imagen" },
@@ -193,7 +193,7 @@ let tipos = {
             "clase": "fotos_silvia",
             "indice": "4",
             "formatos_disponibles": ["8 parejas", "10 parejas", "20 parejas"],
-            "imagenes": "1",
+            "imagenes": true,
             "fondo": "fondo_flores.jpg",
             "valor": [
                 { "val": "silvia1.jpg", "orden": "1", "tipo": "imagen" }, { "val": "silvia1.jpg", "orden": "1", "tipo": "imagen" },

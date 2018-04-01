@@ -8,8 +8,10 @@ $(function () {
     const TIEMPO_VISUALIZACION = 1000, ROTACION_FIN_PARTIDA = 3;
 
     /*
-    Esta función crea la tabla html para las filas y columnas indicadas, identificando cada elemento consecutivamente del 1 hasta el número de celdas
-    La identificacion con data-idrow y data-id nos permite encontrar el elemento en el DOM con jQuery fácilmente
+    Esta función crea la tabla html para las filas y columnas indicadas, 
+    identificando cada elemento consecutivamente del 1 hasta el número de celdas
+    La identificacion con data-idrow y data-id nos permite encontrar el elemento 
+    en el DOM con jQuery fácilmente
     */
     function crearTablaHTML(tabla, cssJuego) {
         const filas = tabla.filas;
@@ -305,7 +307,7 @@ $(function () {
             var objetoImagen = new Image();
             objetoImagen.src = cadena;
 
-            if (elto.imagenes == 1) {
+            if (elto.imagenes === true) {
                 elto.valor.forEach(element => {
                     if (element.tipo == "imagen") {
                         // Cargar imagenes antes de jugar para tener fluidez
