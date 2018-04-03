@@ -115,7 +115,7 @@ $(function () {
         return arrayAux;
     }
 
-    /*
+    /* //
     Cada pulsación sobre una celda dispara la funcion controlClick
     Tras dos clicks se hace una comparación
     Si son pareja se continua
