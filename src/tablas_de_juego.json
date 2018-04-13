@@ -1,0 +1,77 @@
+{
+    "2 parejas":
+        {
+            "dificultad": "0",
+            "columnas": "2",
+            "filas": "2",
+            "anchoCasilla": "300px",
+            "altoCasilla": "300px",
+            "fuente": "100px"
+        },
+    "3 parejas":
+        {
+            "dificultad": "1",
+            "columnas": "3",
+            "filas": "2",
+            "anchoCasilla": "300px",
+            "altoCasilla": "300px",
+            "fuente": "96px"
+        },
+    "8 parejas":
+        {
+            "dificultad": "2",
+            "columnas": "4",
+            "filas": "4",
+            "anchoCasilla": "150px",
+            "altoCasilla": "150px",
+            "fuente": "40px"
+        },
+    "10 parejas":
+        {
+            "dificultad": "3",
+            "columnas": "5",
+            "filas": "4",
+            "anchoCasilla": "150px",
+            "altoCasilla": "150px",
+            "fuente": "40px"
+        },
+    "12 parejas":
+        {
+            "dificultad": "4",
+            "columnas": "6",
+            "filas": "4",
+            "anchoCasilla": "150px",
+            "altoCasilla": "150px",
+            "fuente": "38px"
+        },
+    "14 parejas":
+        {
+            "dificultad": "5",
+            "columnas": "7",
+            "filas": "4",
+            "altoTabla": "480px",
+            "anchoCasilla": "120px",
+            "altoCasilla": "120px",
+            "fuente": "30px"
+        },
+    "16 parejas":
+        {
+            "dificultad": "6",
+            "columnas": "8",
+            "filas": "4",
+            "altoTabla": "328px",
+            "anchoCasilla": "82px",
+            "altoCasilla": "82px",
+            "fuente": "20px"
+        },
+    "20 parejas":
+        {
+            "dificultad": "7",
+            "columnas": "8",
+            "filas": "5",
+            "anchoCasilla": "117px",
+            "altoCasilla": "117px",
+            "fuente": "28px"
+        }
+}
+

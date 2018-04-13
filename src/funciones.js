@@ -51,36 +51,36 @@ $(function () {
     Como el array generado con rellenarArrayIncial ya colocó los datos aleatoriamente, basta con ir entrando en cada celda por su identificador data-id de forma
     secuencial y a cada celda del DOM asignarle una variable (o data) según el array original para las comparaciones y funcionalidades posteriores en la función controlClick
     */
-   function generarDatos(tabla, juego) {
-       const totalCeldas = tabla.filas * tabla.columnas;
-       const totalParejas = totalCeldas / 2;
-       let nuevoArray = [], arrayInicial = [], numero, elto, eltoNuevoArray;
-       
-       arrayInicial = rellenarArrayInicial(totalParejas, juego);
-       
-       for (let i = totalCeldas - 1, indice = 0; i >= 0; i-- , indice++) {
-           numero = numeroAleatorio(0, i);
-           
-           nuevoArray.push(arrayInicial[numero]);
-           arrayInicial.splice(numero, 1);
-           
-           eltoNuevoArray = nuevoArray[indice];
-           
-           elto = $('.celdaJuego').filter(`[data-id='${indice}']`);
-           elto.data('val', eltoNuevoArray.val);
-           elto.data('orden', eltoNuevoArray.orden);
-           elto.data('tipo', eltoNuevoArray.tipo);
-           elto.data('color_texto', eltoNuevoArray.color_texto);
+    function generarDatos(tabla, juego) {
+        const totalCeldas = tabla.filas * tabla.columnas;
+        const totalParejas = totalCeldas / 2;
+        let nuevoArray = [], arrayInicial = [], numero, elto, eltoNuevoArray;
+
+        arrayInicial = rellenarArrayInicial(totalParejas, juego);
+
+        for (let i = totalCeldas - 1, indice = 0; i >= 0; i-- , indice++) {
+            numero = numeroAleatorio(0, i);
+
+            nuevoArray.push(arrayInicial[numero]);
+            arrayInicial.splice(numero, 1);
+
+            eltoNuevoArray = nuevoArray[indice];
+
+            elto = $('.celdaJuego').filter(`[data-id='${indice}']`);
+            elto.data('val', eltoNuevoArray.val);
+            elto.data('orden', eltoNuevoArray.orden);
+            elto.data('tipo', eltoNuevoArray.tipo);
+            elto.data('color_texto', eltoNuevoArray.color_texto);
         }
     }
-    
+
     /*
     Devuelve un entero entre min y max
     */
     function numeroAleatorio(min, max) {
         return Math.round(Math.random() * (max - min) + min);
     }
- 
+
     /*
     Devuelve un entero par entre min y max. Dado que la lista de parejas está indexada desde el 0, y su pareja es el indice 1, después el indice 2
     con pareja indice 3, etc, solo necesitamos el indice del número par y sumar 1 a ese número para recoger los dos elementos de la pareja
@@ -102,7 +102,7 @@ $(function () {
     function rellenarArrayInicial(parejas, tipoJuego) {
         /* Copiar el array con slice, ya que si no se crea una referencia y se cambiaría el array original */
         let arrayAux = [];
-        let arrayCopia = tipos[tipoJuego].valor.slice();
+        let arrayCopia = g_tipos[tipoJuego].valor.slice();
 
         for (let i = 0; i < parejas; i++) {
             let numero = numeroAleatorioPar(0, (arrayCopia.length) - 2);
@@ -279,10 +279,10 @@ $(function () {
         $("#tablaMemory").remove();
 
         tipoJuegoActivo = params.data.juego || g_tipoJuegoActivo;
-        cssJuegoActivo = params.data.clase || tipos[tipoJuegoActivo].clase || 'clase_general';
+        cssJuegoActivo = params.data.clase || g_tipos[tipoJuegoActivo].clase || 'clase_general';
 
         tablaActiva = params.data.tabla || g_tipoTablaActiva;
-        tablaSeleccionada = tablasDeJuego[tablaActiva];
+        tablaSeleccionada = g_tablasDeJuego[tablaActiva];
 
         g_aciertosNecesarios = (tablaSeleccionada.filas * tablaSeleccionada.columnas) / 2;
         establecerMejorIntento(tipoJuegoActivo, tablaActiva);
@@ -298,8 +298,8 @@ $(function () {
     function registrarJuegosDisponibles() {
         let arrayJuegos = [], cadena = '';
 
-        for (const key in tipos) {
-            elto = tipos[key];
+        for (const key in g_tipos) {
+            elto = g_tipos[key];
             arrayJuegos[elto.indice] = key;
 
             // Cargar imagenes antes de jugar para tener fluidez
@@ -327,7 +327,7 @@ $(function () {
                                 <ul id="${index}">
                                 </ul>
                                 </li>`);
-            tipos[element].formatos_disponibles.forEach((element2, index2) => {
+            g_tipos[element].formatos_disponibles.forEach((element2, index2) => {
                 $(`#${index}`).append(`<li class='last'
                                     data-juego='${element}'
                                     data-tabla='${element2}'>
@@ -414,20 +414,40 @@ $(function () {
         $('.mejor_tiempo').text(resultado);
     }
 
-    //////////
-    // Main //
-    //////////
+    function main() {
+        // Rellenar la lista de juegos disponibles a la izquierda de la página
+        registrarJuegosDisponibles();
 
-    // Rellenar la lista de juegos disponibles a la izquierda de la página
-    registrarJuegosDisponibles();
+        g_tipoJuegoActivo = 'La Liga';
+        g_tipoTablaActiva = '10 parejas';
 
-    g_tipoJuegoActivo = 'La Liga';
-    g_tipoTablaActiva = '10 parejas';
+        // Escuchar en los botones de Inicio con y sin tiempo
+        $('#inicio').click({ tiempo: 1 }, comenzarJuego);
+        $('#reinicio').click({ tiempo: 0 }, comenzarJuego);
+        // $('#op_sonido').click(prueba);
 
-    // Escuchar en los botones de Inicio con y sin tiempo
-    $('#inicio').click({ tiempo: 1 }, comenzarJuego);
-    $('#reinicio').click({ tiempo: 0 }, comenzarJuego);
+        // Mostrar un juego inicialmente al cargar la página
+        comenzarJuego({ data: { juego: `${g_tipoJuegoActivo}`, tabla: `${g_tipoTablaActiva}` } });
+    }
 
-    // Mostrar un juego inicialmente al cargar la página
-    comenzarJuego({ data: { juego: `${g_tipoJuegoActivo}`, tabla: `${g_tipoTablaActiva}` } });
+    /* Hay que cargar los datos json y solo después ejecutar la funcion main 
+    estando seguros entonces de que los datos fueron cargados */
+    $.when(
+        $.ajax({
+            url: "src/tablas_de_juego.json",
+            success: function (response) {
+                g_tablasDeJuego = response;
+            },
+            error: function (response) {
+            }
+        }),
+        $.ajax({
+            url: "src/tipos_de_juegos.json",
+            success: function (response) {
+                g_tipos = response;
+            },
+            error: function (response) {
+            }
+        })
+    ).done(main);
 });
