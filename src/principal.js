@@ -266,7 +266,7 @@ $(function () {
         g_contenido1 = g_contenido2 = g_comparacion1 = g_comparacion2 = '';
         g_totalClicks = g_enPausaVista = g_aciertosTotales = g_intentosPartida = 0;
 
-        // Si se recibe un 1, activar el crono, o poner el tiempo a 00:00:00 de lo contrario
+        // Si se recibe un 1, activar el crono, si no, poner el tiempo a 00:00:00
         params.data.tiempo ? inicioTiempo() : reinicioTiempo();
 
         // Paramos el evento de fin de partida
@@ -421,8 +421,8 @@ $(function () {
     // Rellenar la lista de juegos disponibles a la izquierda de la página
     registrarJuegosDisponibles();
 
-    g_tipoJuegoActivo = 'Colores';
-    g_tipoTablaActiva = '8 parejas';
+    g_tipoJuegoActivo = 'La Liga';
+    g_tipoTablaActiva = '10 parejas';
 
     // Escuchar en los botones de Inicio con y sin tiempo
     $('#inicio').click({ tiempo: 1 }, comenzarJuego);
