@@ -355,7 +355,9 @@ $(function () {
         });
     }
 
-    function animacionFinDePartida(grados) {
+    // Ponemos grados=3 para mostrar el uso de valores por defecto.
+    // el valor 10 se tomaría en caso de que la función fuese invocada sin parámetros
+    function animacionFinDePartida(grados=ROTACION_FIN_PARTIDA) {
         if (g_finDePartida) {
             g_timerFinPartida = setTimeout(() => {
                 $('.celdaJuego').css('transform', `rotate(${grados}deg) `);
@@ -419,7 +421,7 @@ $(function () {
         registrarJuegosDisponibles();
 
         g_tipoJuegoActivo = 'La Liga';
-        g_tipoTablaActiva = '10 parejas';
+        g_tipoTablaActiva = '3 parejas';
 
         // Escuchar en los botones de Inicio con y sin tiempo
         $('#inicio').click({ tiempo: 1 }, comenzarJuego);
