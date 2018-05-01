@@ -356,8 +356,8 @@ $(function () {
     }
 
     // Ponemos grados=3 para mostrar el uso de valores por defecto.
-    // el valor 10 se tomaría en caso de que la función fuese invocada sin parámetros
-    function animacionFinDePartida(grados=ROTACION_FIN_PARTIDA) {
+    // el valor 3 se tomaría en caso de que la función fuese invocada sin parámetros
+    function animacionFinDePartida(grados=3) {
         if (g_finDePartida) {
             g_timerFinPartida = setTimeout(() => {
                 $('.celdaJuego').css('transform', `rotate(${grados}deg) `);
