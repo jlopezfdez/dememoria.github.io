@@ -1,5 +1,5 @@
 $(function () {
-    // Declaración de variables globales --
+    // Declaración de variables globales 
     let arrayPartidas = [];
     let g_tipoJuegoActivo, g_tipoTablaActiva, g_timerFinPartida;
     let g_contenido1 = '', g_contenido2 = '', g_comparacion1 = '', g_comparacion2 = '';
