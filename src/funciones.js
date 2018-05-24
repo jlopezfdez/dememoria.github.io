@@ -421,7 +421,7 @@ $(function () {
         registrarJuegosDisponibles();
 
         g_tipoJuegoActivo = 'La Liga';
-        g_tipoTablaActiva = '3 parejas';
+        g_tipoTablaActiva = '10 parejas';
 
         // Escuchar en los botones de Inicio con y sin tiempo
         $('#inicio').click({ tiempo: 1 }, comenzarJuego);
