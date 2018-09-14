@@ -118,7 +118,7 @@ $(
             return arrayAux;
         }
 
-        /* //
+        /*
         Cada pulsación sobre una celda dispara la funcion controlClick
         Tras dos clicks se hace una comparación
         Si son pareja se continua
@@ -252,12 +252,10 @@ $(
             }
         }
 
-
         function eliminarTransicion(e) {
             if (e.originalEvent.propertyName !== 'transform') return;
             $(this).removeClass('playing');
         }
-
 
         function comenzarJuego(params) {
             let tablaActiva = '', tablaSeleccionada = '', tipoJuegoActivo = '', cssJuegoActivo = '';
