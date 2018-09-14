@@ -74,7 +74,7 @@
         {
             "clase": "la_liga",
             "indice": "2",
-            "formatos_disponibles": ["10 parejas", "14 parejas", "20 parejas"],
+            "formatos_disponibles": ["3 parejas", "10 parejas", "14 parejas", "20 parejas"],
             "imagenes": true,
             "fondo": "fondo_cesped.jpg",
             "valor": [
