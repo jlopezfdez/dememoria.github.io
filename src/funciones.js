@@ -227,7 +227,7 @@ $(
                             animacionFinDePartida(ROTACION_FIN_PARTIDA);
 
                             // Escribimos el mejor nº de intentos y tiempo para el juego jugado
-                            establecerMejorIntento(g_tipoJuegoActivo, g_tipoTablaActiva, g_intentosPartida + 1);
+                            establecerMejorIntento(g_tipoJuegoActivo, g_tipoTablaActiva, g_intentosPartida+1);
 
                             if (tiempoSegundos > 0)
                                 establecerMejorTiempo(g_tipoJuegoActivo, g_tipoTablaActiva, tiempoSegundos);
