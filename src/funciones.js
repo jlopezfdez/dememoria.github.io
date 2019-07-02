@@ -1,6 +1,7 @@
 $(
     function () {
         // Declaración de variables globales 
+        // Cambio para prueba git/github
         let g_tipoJuegoActivo, g_tipoTablaActiva, g_timerFinPartida;
         let g_contenido1 = '', g_contenido2 = '', g_comparacion1 = '', g_comparacion2 = '';
         let g_totalClicks = 0, g_aciertosTotales = 0, g_aciertosNecesarios = 0;
